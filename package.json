@@ -1,7 +1,13 @@
 {
-  "name": "vite-project",
-  "private": true,
+  "name": "@dtdot/dialogue-modals",
   "version": "0.0.0",
+  "description": "A react context to provide easy access to common dialogue actions and modals",
+  "main": "build/index.js",
+  "author": "Simon Pratt <19920260+simonpratt@users.noreply.github.com>",
+  "license": "ISC",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "start": "start-storybook -p 6006 --no-open",
     "build": "tsc && vite build",
