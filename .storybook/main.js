@@ -10,11 +10,4 @@ module.exports = {
   "core": {
     "builder": "storybook-builder-vite"
   },
-  async viteFinal(config, { configType }) {
-    // customize the Vite config here
-    config.resolve.global = {};
-
-    // return the customized config
-    return config;
-  },
 }
