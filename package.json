@@ -5,12 +5,13 @@
   "main": "build/index.js",
   "author": "Simon Pratt <19920260+simonpratt@users.noreply.github.com>",
   "license": "ISC",
+  "type": "module",
   "files": [
     "build"
   ],
   "scripts": {
     "start": "start-storybook -p 6006 --no-open",
-    "build": "tsc && vite build",
+    "build": "tsc --project tsconfig.package.json",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
@@ -18,16 +19,19 @@
     "@storybook/react": "^6.4.19",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@types/styled-components": "^5.1.24",
     "@vitejs/plugin-react": "^1.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "storybook-builder-vite": "^0.1.22",
+    "styled-components": "^5.3.5",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.5"
   },
   "dependencies": {
     "@dtdot/lego": "^0.18.8"

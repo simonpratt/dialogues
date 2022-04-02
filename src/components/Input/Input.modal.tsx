@@ -7,7 +7,7 @@ import {
   Modal,
   Text,
 } from "@dtdot/lego";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export interface InputModalProps {
   heading: string;
