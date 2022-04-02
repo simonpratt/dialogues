@@ -1,5 +1,4 @@
-import { BodyStyle, Themes } from "@dtdot/lego";
-import { ThemeProvider } from "styled-components";
+import { DarkThemeProvider } from "@dtdot/lego";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,13 +8,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={Themes.dark}>
-      <BodyStyle />
+    <DarkThemeProvider>
       <Story />
-    </ThemeProvider>
+    </DarkThemeProvider>
   ),
 ];
