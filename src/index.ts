@@ -1,2 +1,2 @@
-export { default as HelperModalsContext } from './core/HelperModals.context';
-export { default as HelperModalsProvider } from './core/HelperModals.provider';
+export { default as DialoguesContext } from './core/DialogueModals.context';
+export { default as DialoguesProvider } from './core/DialogueModals.provider';

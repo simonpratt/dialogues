@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import HelperModalsContext from './HelperModals.context';
+import DialogueModalsContext from './DialogueModals.context';
 
 import ConfirmationModal, { ConfirmationModalProps } from '../components/Confirmation/Confirmation.modal';
 import InputModal, { InputModalProps } from '../components/Input/Input.modal';
 
-export interface HelperModalsProviderProps {
+export interface DialogueModalsProviderProps {
   children: React.ReactNode;
 }
 
-const HelperModalsProvider = ({ children }: HelperModalsProviderProps) => {
+const DialogueModalsProvider = ({ children }: DialogueModalsProviderProps) => {
   const [inputModal, setInputModal] = useState<InputModalProps>();
   const [confirmationModal, setConfirmationModal] = useState<ConfirmationModalProps>();
 
@@ -48,9 +48,9 @@ const HelperModalsProvider = ({ children }: HelperModalsProviderProps) => {
 
   return (
     <>
-      <HelperModalsContext.Provider value={{ requestInput, requestConfirmation }}>
+      <DialogueModalsContext.Provider value={{ requestInput, requestConfirmation }}>
         {children}
-      </HelperModalsContext.Provider>
+      </DialogueModalsContext.Provider>
 
       {inputModal && (
         <InputModal
@@ -73,4 +73,4 @@ const HelperModalsProvider = ({ children }: HelperModalsProviderProps) => {
   );
 };
 
-export default HelperModalsProvider;
+export default DialogueModalsProvider;

@@ -1,11 +1,11 @@
 import { createContext } from 'react';
 
-export interface HelperModalsContextProps {
+export interface DialogueModalsContextProps {
   requestConfirmation: (heading: string, message?: string) => Promise<boolean>;
   requestInput: (heading: string, message?: string) => Promise<string | undefined>;
 }
 
-const HelperModalsContext = createContext<HelperModalsContextProps>({
+const DialogueModalsContext = createContext<DialogueModalsContextProps>({
   // eslint-disable-next-line
   requestConfirmation: (heading: string) => {
     throw new Error('ERROR: requestConfirmation function must be bound in a context');
@@ -16,4 +16,4 @@ const HelperModalsContext = createContext<HelperModalsContextProps>({
   },
 });
 
-export default HelperModalsContext;
+export default DialogueModalsContext;

@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
-import HelperModalsProvider from '../../core/HelperModals.provider';
-import HelperModalsContext from '../../core/HelperModals.context';
 import { Button, Spacer, Text } from '@dtdot/lego';
+import { DialoguesContext, DialoguesProvider } from '../..';
 
 export const Standard = () => {
-  const { requestInput } = useContext(HelperModalsContext);
+  const { requestInput } = useContext(DialoguesContext);
   const [lastText, setLastText] = useState<string>();
 
   const clickHandler = async () => {
@@ -25,7 +24,7 @@ export const Standard = () => {
 };
 
 export const WithoutMessage = () => {
-  const { requestInput } = useContext(HelperModalsContext);
+  const { requestInput } = useContext(DialoguesContext);
 
   const clickHandler = async () => {
     await requestInput('What is your name?');
@@ -42,9 +41,9 @@ export default {
   title: 'Modals/Input',
   decorators: [
     (Story) => (
-      <HelperModalsProvider>
+      <DialoguesProvider>
         <Story />
-      </HelperModalsProvider>
+      </DialoguesProvider>
     ),
   ],
 } as Meta;
