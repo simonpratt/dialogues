@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonGroup, Modal, Spacer, Text } from "@dtdot/lego";
+import { Button, ButtonGroup, Modal, Spacer, Text } from '@dtdot/lego';
 
 export interface ConfirmationModalProps {
   heading: string;
@@ -8,23 +8,18 @@ export interface ConfirmationModalProps {
   onConfirm: () => void;
 }
 
-const ConfirmationModal = ({
-  heading,
-  message,
-  onClose,
-  onConfirm,
-}: ConfirmationModalProps) => {
+const ConfirmationModal = ({ heading, message, onClose, onConfirm }: ConfirmationModalProps) => {
   return (
     <Modal onClose={onClose}>
-      <Modal.Header header={heading || "Input Required"} />
+      <Modal.Header header={heading || 'Input Required'} />
       <Modal.Body>
         <Text>{message}</Text>
-        <Spacer size="2x" />
-        <ButtonGroup alignment="right">
-          <Button variant="secondary" onClick={onClose}>
+        <Spacer size='2x' />
+        <ButtonGroup alignment='right'>
+          <Button variant='secondary' onClick={onClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={onConfirm}>
+          <Button variant='primary' onClick={onConfirm}>
             Ok
           </Button>
         </ButtonGroup>

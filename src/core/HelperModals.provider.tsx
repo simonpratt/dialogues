@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import HelperModalsContext from "./HelperModals.context";
+import React, { useState } from 'react';
+import HelperModalsContext from './HelperModals.context';
 
-import ConfirmationModal, {
-  ConfirmationModalProps,
-} from "../components/Confirmation/Confirmation.modal";
-import InputModal, { InputModalProps } from "../components/Input/Input.modal";
+import ConfirmationModal, { ConfirmationModalProps } from '../components/Confirmation/Confirmation.modal';
+import InputModal, { InputModalProps } from '../components/Input/Input.modal';
 
 export interface HelperModalsProviderProps {
   children: React.ReactNode;
@@ -12,13 +10,9 @@ export interface HelperModalsProviderProps {
 
 const HelperModalsProvider = ({ children }: HelperModalsProviderProps) => {
   const [inputModal, setInputModal] = useState<InputModalProps>();
-  const [confirmationModal, setConfirmationModal] =
-    useState<ConfirmationModalProps>();
+  const [confirmationModal, setConfirmationModal] = useState<ConfirmationModalProps>();
 
-  const requestConfirmation = (
-    heading: string,
-    message?: string
-  ): Promise<boolean> => {
+  const requestConfirmation = (heading: string, message?: string): Promise<boolean> => {
     return new Promise<boolean>((resolve) => {
       setConfirmationModal({
         heading,
@@ -35,10 +29,7 @@ const HelperModalsProvider = ({ children }: HelperModalsProviderProps) => {
     });
   };
 
-  const requestInput = (
-    heading: string,
-    message?: string
-  ): Promise<string | undefined> => {
+  const requestInput = (heading: string, message?: string): Promise<string | undefined> => {
     return new Promise<string | undefined>((resolve) => {
       setInputModal({
         heading,
@@ -57,9 +48,7 @@ const HelperModalsProvider = ({ children }: HelperModalsProviderProps) => {
 
   return (
     <>
-      <HelperModalsContext.Provider
-        value={{ requestInput, requestConfirmation }}
-      >
+      <HelperModalsContext.Provider value={{ requestInput, requestConfirmation }}>
         {children}
       </HelperModalsContext.Provider>
 
