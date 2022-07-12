@@ -1,5 +1,5 @@
-import { Button, ButtonGroup, ControlGroup, Form, Input, Modal, Text } from '@dtdot/lego';
 import React, { useState } from 'react';
+import { Button, ButtonGroup, ControlGroup, Form, Input, Modal, Text } from '@dtdot/lego';
 
 export interface InputModalProps {
   heading: string;

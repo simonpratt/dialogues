@@ -5,21 +5,6 @@ module.exports = {
     mocha: true,
     browser: true,
   },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module',
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
-  ],
-  settings: {
-    'import/resolver': { typescript: {} },
-    'react': { version: 'detect' },
-  },
-  ignorePatterns: ['node_modules', 'dist', '.prettierrc.js'],
+  extends: ['@dtdot/eslint-config/react'],
+  ignorePatterns: ['node_modules', 'dist', '.prettierrc.js', '.eslintrc.js'],
 };

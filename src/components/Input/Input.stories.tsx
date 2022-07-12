@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
 import { Meta } from '@storybook/react/types-6-0';
+import React, { useContext, useState } from 'react';
 import { Button, Spacer, Text } from '@dtdot/lego';
 import { DialoguesContext, DialoguesProvider } from '../..';
 

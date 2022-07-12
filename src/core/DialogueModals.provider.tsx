@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import DialogueModalsContext from './DialogueModals.context';
-
 import ConfirmationModal, { ConfirmationModalProps } from '../components/Confirmation/Confirmation.modal';
 import InputModal, { InputModalProps } from '../components/Input/Input.modal';
+import DialogueModalsContext from './DialogueModals.context';
 
 export interface DialogueModalsProviderProps {
   children: React.ReactNode;
