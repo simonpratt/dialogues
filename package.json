@@ -1,6 +1,6 @@
 {
   "name": "@dtdot/dialogues",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A collection of useful dialogue modals to cut down on development effort when implementing simple prompts",
   "main": "build/index.js",
   "author": "Simon Pratt <19920260+simonpratt@users.noreply.github.com>",
