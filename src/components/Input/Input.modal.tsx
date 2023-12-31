@@ -30,12 +30,12 @@ const InputModal = ({ heading, message, onClose, onSubmit, options }: InputModal
         <Form value={value} onChange={setValue} onSubmit={_onSubmitClicked}>
           <ControlGroup variation='submission'>
             {message && <Text>{message}</Text>}
-            <Input autoFocus name='name' />
+            <Input autoFocus name='name' data-testid='button-input' />
             <ButtonGroup alignment='right'>
-              <Button variant={options?.closeVariant || 'secondary'} onClick={onClose}>
+              <Button variant={options?.closeVariant || 'secondary'} onClick={onClose} data-testid='button-cancel'>
                 {options?.closeText || 'Cancel'}
               </Button>
-              <Button variant={options?.confirmVariant || 'primary'} type='submit'>
+              <Button variant={options?.confirmVariant || 'primary'} type='submit' data-testid='button-confirm'>
                 {options?.confirmText || 'Ok'}
               </Button>
             </ButtonGroup>

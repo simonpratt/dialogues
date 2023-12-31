@@ -24,10 +24,10 @@ const ConfirmationModal = ({ heading, message, onClose, onConfirm, options }: Co
         <Text>{message}</Text>
         <Spacer size='2x' />
         <ButtonGroup alignment='right'>
-          <Button variant={options?.closeVariant || 'secondary'} onClick={onClose}>
+          <Button variant={options?.closeVariant || 'secondary'} onClick={onClose} data-testid='button-cancel'>
             {options?.closeText || 'Cancel'}
           </Button>
-          <Button variant={options?.confirmVariant || 'primary'} onClick={onConfirm}>
+          <Button variant={options?.confirmVariant || 'primary'} onClick={onConfirm} data-testid='button-confirm'>
             {options?.confirmText || 'Ok'}
           </Button>
         </ButtonGroup>
