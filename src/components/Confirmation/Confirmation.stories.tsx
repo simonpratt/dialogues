@@ -37,6 +37,23 @@ export const WithoutMessage = () => {
   );
 };
 
+export const CustomButtons = () => {
+  const { requestConfirmation } = useContext(DialoguesContext);
+
+  const clickHandler = async () => {
+    await requestConfirmation('Confirmation Required', 'Optional confirmation message goes here', {
+      closeText: 'No',
+      confirmText: 'Yes',
+    });
+  };
+
+  return (
+    <>
+      <Button onClick={clickHandler}>Request Confirmation</Button>
+    </>
+  );
+};
+
 export default {
   title: 'Modals/Confirmation',
   decorators: [

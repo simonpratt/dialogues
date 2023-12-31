@@ -1,8 +1,10 @@
 import { createContext } from 'react';
+import { ConfirmationModalOptions } from '../components/Confirmation/Confirmation.modal';
+import { InputModalOptions } from '../components/Input/Input.modal';
 
 export interface DialogueModalsContextProps {
-  requestConfirmation: (heading: string, message?: string) => Promise<boolean>;
-  requestInput: (heading: string, message?: string) => Promise<string | undefined>;
+  requestConfirmation: (heading: string, message?: string, options?: ConfirmationModalOptions) => Promise<boolean>;
+  requestInput: (heading: string, message?: string, options?: InputModalOptions) => Promise<string | undefined>;
 }
 
 const DialogueModalsContext = createContext<DialogueModalsContextProps>({

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import ConfirmationModal, { ConfirmationModalProps } from '../components/Confirmation/Confirmation.modal';
-import InputModal, { InputModalProps } from '../components/Input/Input.modal';
+import ConfirmationModal, {
+  ConfirmationModalOptions,
+  ConfirmationModalProps,
+} from '../components/Confirmation/Confirmation.modal';
+import InputModal, { InputModalOptions, InputModalProps } from '../components/Input/Input.modal';
 import DialogueModalsContext from './DialogueModals.context';
 
 export interface DialogueModalsProviderProps {
@@ -11,7 +14,11 @@ const DialogueModalsProvider = ({ children }: DialogueModalsProviderProps) => {
   const [inputModal, setInputModal] = useState<InputModalProps>();
   const [confirmationModal, setConfirmationModal] = useState<ConfirmationModalProps>();
 
-  const requestConfirmation = (heading: string, message?: string): Promise<boolean> => {
+  const requestConfirmation = (
+    heading: string,
+    message?: string,
+    options?: ConfirmationModalOptions,
+  ): Promise<boolean> => {
     return new Promise<boolean>((resolve) => {
       setConfirmationModal({
         heading,
@@ -24,11 +31,16 @@ const DialogueModalsProvider = ({ children }: DialogueModalsProviderProps) => {
           setConfirmationModal(undefined);
           resolve(true);
         },
+        options,
       });
     });
   };
 
-  const requestInput = (heading: string, message?: string): Promise<string | undefined> => {
+  const requestInput = (
+    heading: string,
+    message?: string,
+    options?: InputModalOptions,
+  ): Promise<string | undefined> => {
     return new Promise<string | undefined>((resolve) => {
       setInputModal({
         heading,
@@ -41,6 +53,7 @@ const DialogueModalsProvider = ({ children }: DialogueModalsProviderProps) => {
           setInputModal(undefined);
           resolve(val);
         },
+        options,
       });
     });
   };
@@ -57,6 +70,7 @@ const DialogueModalsProvider = ({ children }: DialogueModalsProviderProps) => {
           message={inputModal.message}
           onClose={inputModal.onClose}
           onSubmit={inputModal.onSubmit}
+          options={inputModal.options}
         />
       )}
 
@@ -66,6 +80,7 @@ const DialogueModalsProvider = ({ children }: DialogueModalsProviderProps) => {
           message={confirmationModal.message}
           onClose={confirmationModal.onClose}
           onConfirm={confirmationModal.onConfirm}
+          options={confirmationModal.options}
         />
       )}
     </>

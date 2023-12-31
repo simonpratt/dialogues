@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, ControlGroup, Form, Input, Modal, Text } from '@dtdot/lego';
 
+export interface InputModalOptions {
+  closeText?: string;
+  closeVariant?: 'primary' | 'secondary' | 'tertiary';
+  confirmText?: string;
+  confirmVariant?: 'primary' | 'secondary' | 'tertiary';
+}
+
 export interface InputModalProps {
   heading: string;
   message?: string;
   onClose: () => void;
   onSubmit: (val: string) => void;
+  options?: InputModalOptions;
 }
 
-const InputModal = ({ heading, message, onClose, onSubmit }: InputModalProps) => {
+const InputModal = ({ heading, message, onClose, onSubmit, options }: InputModalProps) => {
   const [value, setValue] = useState({ name: '' });
 
   const _onSubmitClicked = () => {
@@ -24,10 +32,12 @@ const InputModal = ({ heading, message, onClose, onSubmit }: InputModalProps) =>
             {message && <Text>{message}</Text>}
             <Input autoFocus name='name' />
             <ButtonGroup alignment='right'>
-              <Button variant='secondary' onClick={onClose}>
-                Cancel
+              <Button variant={options?.closeVariant || 'secondary'} onClick={onClose}>
+                {options?.closeText || 'Cancel'}
               </Button>
-              <Button type='submit'>Ok</Button>
+              <Button variant={options?.confirmVariant || 'primary'} type='submit'>
+                {options?.confirmText || 'Ok'}
+              </Button>
             </ButtonGroup>
           </ControlGroup>
         </Form>
