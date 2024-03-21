@@ -46,6 +46,6 @@
     "styled-components": "5.x"
   },
   "dependencies": {
-    "@dtdot/lego": "^0.18.9"
+    "@dtdot/lego": "^2.0.0-26"
   }
 }

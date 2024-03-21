@@ -24,12 +24,12 @@ const InputModal = ({ heading, message, onClose, onSubmit, options }: InputModal
   };
 
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={onClose} data-testid='modal-input'>
       <Modal.Header header={heading || 'Input Required'} />
       <Modal.Body>
         <Form value={value} onChange={setValue} onSubmit={_onSubmitClicked}>
           <ControlGroup variation='submission'>
-            {message && <Text>{message}</Text>}
+            {message && <Text data-testid='text-input-help'>{message}</Text>}
             <Input autoFocus name='name' data-testid='button-input' />
             <ButtonGroup alignment='right'>
               <Button variant={options?.closeVariant || 'secondary'} onClick={onClose} data-testid='button-cancel'>

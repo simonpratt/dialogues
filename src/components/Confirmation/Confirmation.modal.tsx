@@ -18,10 +18,10 @@ export interface ConfirmationModalProps {
 
 const ConfirmationModal = ({ heading, message, onClose, onConfirm, options }: ConfirmationModalProps) => {
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={onClose} data-testid='modal-confirmation'>
       <Modal.Header header={heading || 'Confirmation Required'} />
       <Modal.Body>
-        <Text>{message}</Text>
+        <Text data-testid='text-confirmation-help'>{message}</Text>
         <Spacer size='2x' />
         <ButtonGroup alignment='right'>
           <Button variant={options?.closeVariant || 'secondary'} onClick={onClose} data-testid='button-cancel'>
